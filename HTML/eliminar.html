@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MoBaTickets - Eliminar cliente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style/style_elimina.css">
+</head>
+<body>
+    <!-- 
+    Formulario para ingresar el Correo electronico del cliente el cual se quiere eliminar, luego de eso se mandará la información 
+    al eliminar.php,luego se borrará el cliente dentro de la base de datos por medio de las consultas del php
+    -->
+    <div class="contenedor-eliminar"> 
+        <div class="seccion-formulario">
+            <div class="contenido-formulario">
+                <h2 class="titulo-eliminar">Eliminar Cuenta</h2>
+                <form action="php/eliminar.php" method="post">
+                    <div class="grupo-input">
+                        <label>
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" name="email" placeholder="Ingrese su email" required>
+                        </label>
+                    </div>
+                    <button type="submit" class="boton-eliminar">Eliminar cuenta</button>
+                </form>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>

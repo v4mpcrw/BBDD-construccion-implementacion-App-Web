@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MoBaTickets - Registro de Clientes</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../style/style_actualizar.css">  
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+    <!-- Pagina que dara paso a poder modificar todos los datos de un cliente pero sin cambiar el correo respectivo, 
+        tiene sus respectivos formularios de ingresos de datos y formularios para seleccionar la opcion mas adecuada, luegos los datos se mandaran al archivo php ligado al formulario-->
+
+            <div class="seccion-formulario">
+                <div class="contenido-formulario">
+                    <h2 class="titulo-formulario">Actualice sus datos</h2>
+                    <form action="php/actualizar.php" method="post" name="Actualizar" class="formulario-ticket">
+                        <!-- Formulario para actualizar los datos del cliente -->
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-user'></i>
+                                    <input type="text" name="nombre_completo" placeholder="Nombre completo" required>
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-calendar'></i>
+                                    <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" required>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-male-female'></i>
+                                    <select name="sexo" required>
+                                        <option value="" disabled selected>Sexo</option>
+                                        <option value="femenino">Femenino</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="no_responder">Prefiero no responder</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-phone'></i>
+                                    <input type="text" name="numero_telefono" placeholder="Telefono" required>
+                                </label>
+                            </div>
+                        </div>
+                        <!--Seccion de credenciales de acceso: email y contraseña-->
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-envelope'></i>
+                                <input type="email" name="email" placeholder="Correo electronico" required>
+                            </label>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-lock-alt'></i>
+                                    <input type="password" name="contrasena" placeholder="Password" required>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- Seccion de datos de direccion de usuario-->
+                        <div class="titulo-seccion">
+                            <i class='bx bx-home'></i>
+                            <span>Direccion</span>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-building-house'></i>
+                                    <input type="text" name="departamento" placeholder="Departamento">
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-building'></i>
+                                    <input type="text" name="condominio" placeholder="Condominio">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-map'></i>
+                                    <input type="text" name="nro_calle" placeholder="Numero de calle">
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-map-pin'></i>
+                                    <input type="text" name="comuna" placeholder="Comuna">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-map-alt'></i>
+                                <input type="text" name="region" placeholder="Region">
+                            </label>
+                        </div>
+                        <!--Boton de envio-->
+                        <button type="submit" class="boton-registrar">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

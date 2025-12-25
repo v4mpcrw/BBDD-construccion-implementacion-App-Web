@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a2a6c, #6eaaff, #fdbb2d);
+    padding: 20px;
+}
+
+.contenedor-eliminar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seccion-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+.contenido-formulario {
+    width: 100%;
+}
+
+.titulo-eliminar {
+    color: #1a2a6c;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.grupo-input {
+    margin-bottom: 20px;
+}
+
+.grupo-input label {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+.grupo-input label input {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.grupo-input label i {
+    color: #1a2a6c;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.boton-eliminar {
+    background: linear-gradient(to right, #bf76cf,  #41008b);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.boton-eliminar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #8b0000, #b21f1f);
+}
+
+@media screen and (max-width: 480px) {
+    .seccion-formulario {
+        padding: 30px 20px;
+    }
+    
+    .titulo-eliminar {
+        font-size: 1.5rem;
+    }
+}
+/*Creditos style.css = https://github.com/DaniCodex/modificaciones.previas.validacionformulario
+https://www.youtube.com/watch?v=nLvg_sqNYB0

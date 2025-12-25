@@ -1,0 +1,169 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #7b3d29, #861fb2, #2d92fd);
+    padding: 20px;
+}
+
+.contenedor-principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seccion-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+.contenido-menu {
+    width: 100%;
+}
+
+.titulo-principal {
+    color: #1a2a6c;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    color: #b21f1f;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.separador {
+    height: 2px;
+    background: linear-gradient(to right, #1a2a6c, #b21f1f);
+    margin: 25px 0;
+    border-radius: 2px;
+}
+
+.texto-instruccion {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.menu-opciones {
+    list-style: none;
+    text-align: left;
+}
+
+.menu-opciones li {
+    margin-bottom: 15px;
+}
+
+.menu-opciones a {
+    display: block;
+    padding: 15px 20px;
+    background: linear-gradient(to right, #ff9494, #dbdb92);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-opciones a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #966fc2, #bf6e6e);
+}
+.contenedor-ticket {
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.seccion-bienvenida {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #1a2a6c, #b21f1f);
+    padding: 30px;
+    color: white;
+}
+
+.contenido-bienvenida {
+    width: 100%;
+}
+.logo-ticket {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fdbb2d;
+}
+
+.texto-bienvenida {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.caracteristicas {
+    margin-top: 30px;
+}
+
+.caracteristica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 0.9rem;
+}
+
+.caracteristica i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #fdbb2d;
+}
+
+@media screen and (max-width: 480px) {
+    .seccion-menu {
+        padding: 30px 20px;
+    }
+    
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+    
+    .menu-opciones a {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/*Creditos style.css = https://github.com/DaniCodex/modificaciones.previas.validacionformulario
+https://www.youtube.com/watch?v=nLvg_sqNYB0

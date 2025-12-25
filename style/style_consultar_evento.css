@@ -1,0 +1,127 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7b98f4, #e9d0a065, #f79e9f);
+  padding: 8px;   
+}
+
+.contenedor-principal {
+  background-color: #fff;
+  border-radius: 10px;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+  max-width: 650px;   
+  width: 100%;
+  overflow: hidden;
+  padding: 12px;   
+  margin-top: 10px; 
+}
+
+.titulo-pagina {
+  text-align: center;
+  color: #1a2a6c;
+  font-size: 1.3rem;   
+  margin-bottom: 12px;   
+  font-weight: 600;
+}
+
+.lista-eventos {
+  margin-bottom: 15px;   
+}
+
+.evento-item {
+  background-color: #f8f8f8;
+  border-radius: 5px;   
+  padding: 10px;   
+  margin-bottom: 10px;   
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);   
+}
+
+.evento-item p {
+  margin: 2px 0;   
+  color: #333;
+  font-size: 0.8rem;   
+  line-height: 1.2; 
+}
+
+.evento-item strong {
+  color: #1a2a6c;
+  font-size: 0.8rem;   
+}
+
+.sin-eventos {
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;   
+  padding: 10px;   
+}
+
+.Volveratras {
+  background-color: #f8f8f8;
+  border-radius: 5px;   
+  padding: 12px;   
+  margin-top: 15px;   
+}
+
+.boton-volver {
+  background: linear-gradient(to right, #b12e9b, #922626);
+  color: #fff;
+  border-radius: 6px;   
+  border: none;
+  padding: 8px 12px;   
+  cursor: pointer;
+  font-size: 0.85rem;   
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-top: 0;   
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);   
+  width: 100%; 
+  justify-content: center; 
+}
+
+.boton-volver:hover {
+  transform: translateY(-2px);   
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);   
+  background: linear-gradient(to right, #922626, #b12e9b);
+}
+
+.boton-volver i {
+  margin-right: 6px;   
+  font-size: 0.9rem;   
+}
+
+@media screen and (max-width: 480px) {
+  .contenedor-principal {
+    padding: 8px;   
+  }
+  
+  .titulo-pagina {
+    font-size: 1.1rem;   
+  }
+  
+  .evento-item {
+    padding: 8px;   
+  }
+  
+  .Volveratras {
+    padding: 10px;   
+  }
+  
+  body {
+    padding: 5px;   
+    align-items: flex-start;   
+  }
+}
+/*Creditos style.css = https://github.com/DaniCodex/modificaciones.previas.validacionformulario
+https://www.youtube.com/watch?v=nLvg_sqNYB0

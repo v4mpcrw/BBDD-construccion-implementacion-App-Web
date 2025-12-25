@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MoBaTicket - Registro de Eventos</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../style/style_ingreso_evento.css">
+    </head>
+    <body>
+        <div class="seccion-formulario">
+            <div class="contenido-formulario">
+                <h2 class="titulo-formulario">Registro de nuevos eventos</h2>
+                <p class="subtitulo-formulario">Ingrese los datos del nuevo evento</p>
+                <!-- Pagina que permitira crear tanto un nuevo evento como sus respectivas funciones las cuales pueden ser mas de una si se desea,
+                    tiene todos sus ingresos de datos y formularios apra seleccionar el dato que mas estime conveniente, luego las mandara por medio del formulario al php existente y ligado al mismo formulario-->
+                <form action="php/ingresar_evento.php" method="post" name="ingresar_evento" class="formulario-ticket">
+                    <!-- Funcion para mostrar los campos segun el tipo de evento -->
+                    <script>
+                    function mostrarCampos() {
+                        const tipo = document.getElementById('tipo_hijo').value;
+                        document.querySelectorAll('[id^="campos_"]').forEach(div => div.style.display='none');
+                        if(tipo) {
+                            document.getElementById('campos_' + tipo).style.display='block';
+                        }
+                    }
+                    </script>
+                    <script>
+                        function agregarFuncion() {
+                            let container = document.getElementById('funcionesContainer');
+                            let nuevaFuncion = container.children[0].cloneNode(true);
+
+                            // Limpiar valores
+                            nuevaFuncion.querySelectorAll("input, select").forEach(input => input.value = "");
+                            container.appendChild(nuevaFuncion);
+                        }
+                    </script>
+
+                    <!-- Información del Evento -->
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-hash'></i>
+                                <input type="number" name="id_evento" placeholder="ID evento" required>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-calendar-event'></i>
+                                <input type="text" name="nombre_evento" placeholder="Nombre evento" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-user'></i>
+                                <input type="text" name="productor" placeholder="Productor" required>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-id-card'></i>
+                                <input type="number" name="rut_productor" placeholder="RUT productor sin DF" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-category'></i>
+                                <select name="tipo_evento" required>
+                                    <option value="">Tipo de evento</option>
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-time'></i>
+                                <input type="number" name="hora" min="0" max="23" placeholder="Hora (0-23)" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-calendar'></i>
+                                <input type="number" name="dia" min="1" max="31" placeholder="Día (1-31)" required>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-calendar'></i>
+                                <input type="number" name="mes" min="1" max="12" placeholder="Mes (1-12)" required>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-calendar'></i>
+                                <input type="number" name="anio" min="2025" placeholder="Año (2025+)" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Datos del Lugar -->
+                    <div class="titulo-seccion">
+                        <i class='bx bx-map'></i>
+                        <span>Datos del lugar</span>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-building'></i>
+                                <select name="nombre_lugar" required>
+                                    <option value="">Nombre del lugar</option>
+                                    <option value="espacio riesco">Espacio Riesco</option>
+                                    <option value="movistar arena">Movistar Arena</option>
+                                    <option value="club hípico">Club Hípico</option>
+                                    <option value="centro de eventos múnich">Centro de eventos Múnich</option>
+                                    <option value="teatro coliseo">Teatro Coliseo</option>
+                                    <option value="claro arena">Claro Arena</option>
+                                    <option value="parque estadio nacional">Parque Estadio Nacional</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-map-pin'></i>
+                                <select name="sector" required>
+                                    <option value="">Sector</option>
+                                    <option value="diamante">Diamante</option>
+                                    <option value="diamante lateral">Diamante Lateral</option>
+                                    <option value="platinum">Platinum</option>
+                                    <option value="golden">Golden</option>
+                                    <option value="platea zafiro">Platea Zafiro</option>
+                                    <option value="platea royal">Platea Royal</option>
+                                    <option value="platea baja silver">Platea Baja Silver</option>
+                                    <option value="silver escenario b">Silver Escenario B</option>
+                                    <option value="platea alta">Platea Alta</option>
+                                    <option value="tribuna">Tribuna</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-dollar'></i>
+                                <input type="number" name="precio" placeholder="Precio (CLP)" required>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Tipos de Eventos -->
+                    <div class="titulo-seccion">
+                        <i class='bx bx-star'></i>
+                        <span>Tipos de eventos</span>
+                    </div>
+
+                    <div class="fila-formulario">
+                        <div class="grupo-input">
+                            <label>
+                                <i class='bx bx-category-alt'></i>
+                                <select name="tipo_hijo" id="tipo_hijo" required onchange="mostrarCampos()">
+                                    <option value="">Seleccione tipo</option>
+                                    <option value="musica">Música</option>
+                                    <option value="deporte">Deporte</option>
+                                    <option value="teatro">Teatro</option>
+                                    <option value="familia">Familia</option>
+                                    <option value="especial">Especial</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Campos por Tipo -->
+                    <div id="campos_musica" class="campos-tipo" style="display:none;">
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-music'></i>
+                                    <input type="text" name="genero_musical" placeholder="Género musical">
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-user-voice'></i>
+                                    <input type="text" name="nombre_artistico" placeholder="Nombre artístico">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-list-ul'></i>
+                                <input type="text" name="setlist" placeholder="Setlist">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="campos_deporte" class="campos-tipo" style="display:none;">
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-trophy'></i>
+                                    <input type="text" name="club_deportivo" placeholder="Club deportivo">
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-group'></i>
+                                    <input type="text" name="nombre_equipo" placeholder="Nombre equipo">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-football'></i>
+                                <select name="tipo_deporte">
+                                    <option value="">Tipo deporte</option>
+                                    <option value="futbol">Fútbol</option>
+                                    <option value="besquetbol">Básquetbol</option>
+                                    <option value="tenis">Tenis</option>
+                                    <option value="voleibol">Voleibol</option>
+                                    <option value="beisbol">Béisbol</option>
+                                    <option value="rugby">Rugby</option>
+                                    <option value="hándbol">Hándbol</option>
+                                    <option value="hockey">Hockey Césped</option>
+                                    <option value="boxeo">Boxeo</option>
+                                    <option value="karate">Karate</option>
+                                    <option value="taekwondo">Taekwondo</option>
+                                    <option value="natación">Natación</option>
+                                    <option value="ciclismo">Ciclismo</option>
+                                    <option value="atletismo">Atletismo</option>
+                                    <option value="automovilismo">Automovilismo</option>
+                                    <option value="motociclismo">Motociclismo</option>
+                                    <option value="golf">Golf</option>
+                                    <option value="surf">Surf</option>
+                                    <option value="skateboarding">Skateboarding</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="campos_teatro" class="campos-tipo" style="display:none;">
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-edit'></i>
+                                <input type="text" name="descripcion" placeholder="Descripción">
+                            </label>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-user-plus'></i>
+                                    <input type="number" name="elenco" placeholder="Elenco (número)">
+                                </label>
+                            </div>
+                            <div class="grupo-input">
+                                <label>
+                                    <i class='bx bx-time-five'></i>
+                                    <input type="text" name="duracion" placeholder="Duración (hh:mm:ss)">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-group'></i>
+                                <select name="publico">
+                                    <option value="">Público objetivo</option>
+                                    <option value="infantil">Infantil</option>
+                                    <option value="juvenil">Juvenil</option>
+                                    <option value="adulto">Adulto</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="campos_familia" class="campos-tipo" style="display:none;">
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-home-heart'></i>
+                                <select name="tipo_familia">
+                                    <option value="">Tipo de familia</option>
+                                    <option value="humor">Humor</option>
+                                    <option value="videojuegos">Videojuegos</option>
+                                    <option value="circo">Circo</option>
+                                    <option value="familia">Familia</option>
+                                    <option value="infantil">Infantil</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="campos_especial" class="campos-tipo" style="display:none;">
+                        <div class="grupo-input ancho-completo">
+                            <label>
+                                <i class='bx bx-star'></i>
+                                <select name="tipo_especial">
+                                    <option value="">Tipo especial</option>
+                                    <option value="festival">Festival</option>
+                                    <option value="experiencia_inmersiva">Experiencia inmersiva</option>
+                                    <option value="exhibicion">Exhibición</option>
+                                    <option value="fiesta">Fiesta</option>
+                                    <option value="concierto">Concierto</option>
+                                    <option value="standup">Standup</option>
+                                    <option value="humor">Humor</option>
+                                    <option value="taller">Taller</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Funciones del Evento -->
+                    <div class="titulo-seccion">
+                        <i class='bx bx-calendar-plus'></i>
+                        <span>Funciones del evento</span>
+                    </div>
+
+                    <div id="funcionesContainer">
+                        <div class="funcion">
+                            <div class="fila-formulario">
+                                <div class="grupo-input">
+                                    <label>
+                                        <i class='bx bx-hash'></i>
+                                        <input type="number" name="id_funcion[]" placeholder="ID función" required>
+                                    </label>
+                                </div>
+                                <div class="grupo-input">
+                                    <label>
+                                        <i class='bx bx-time'></i>
+                                        <input type="number" name="hora_func[]" placeholder="Hora (0-23)" required>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-input">
+                                    <label>
+                                        <i class='bx bx-calendar'></i>
+                                        <input type="number" name="dia_func[]" placeholder="Día (1-31)" required>
+                                    </label>
+                                </div>
+                                <div class="grupo-input">
+                                    <label>
+                                        <i class='bx bx-calendar'></i>
+                                        <input type="number" name="mes_func[]" placeholder="Mes (1-12)" required>
+                                    </label>
+                                </div>
+                                <div class="grupo-input">
+                                    <label>
+                                        <i class='bx bx-calendar'></i>
+                                        <input type="number" name="anio_func[]" placeholder="Año (2025+)" required>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="grupo-input ancho-completo">
+                                <label>
+                                    <i class='bx bx-user-voice'></i>
+                                    <input type="number" name="capacidad[]" placeholder="Capacidad de la función" required>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="boton-agregar" onclick="agregarFuncion()">
+                        <i class='bx bx-plus'></i> Añadir otra función
+                    </button>
+
+                    <button type="submit" class="boton-registrar">Ingresar Evento</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a168ec, #848ac365, #97afe8);
+  padding: 8px;   
+}
+
+.contenedor-principal {
+  background-color: #fff;
+  border-radius: 10px;   
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);   
+  max-width: 650px;   
+  width: 100%;
+  overflow: hidden;
+  padding: 12px;   
+  margin-top: 10px; 
+}
+
+.titulo-pagina {
+  text-align: center;
+  color: #1a2a6c;
+  font-size: 1.3rem;   
+  margin-bottom: 12px;   
+  font-weight: 600;
+}
+
+.lista-eventos {
+  margin-bottom: 15px;   
+}
+
+.evento-item {
+  background-color: #f8f8f8;
+  border-radius: 5px;   
+  padding: 10px;   
+  margin-bottom: 10px;   
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);   
+  border-left: 4px solid #1a2a6c;
+}
+
+.evento-item p {
+  margin: 2px 0;   
+  color: #333;
+  font-size: 0.8rem;   
+  line-height: 1.2; 
+}
+
+.evento-item strong {
+  color: #1a2a6c;
+  font-size: 0.8rem;   
+}
+
+.sin-eventos {
+  text-align: center;
+  color: #555;
+  font-size: 0.85rem;   
+  padding: 10px;   
+}
+
+.formulario-consulta {
+  background-color: #f8f8f8;
+  border-radius: 5px;   
+  padding: 12px;   
+  margin-top: 10px;   
+}
+
+.titulo-formulario {
+  color: #1a2a6c;
+  font-size: 1.1rem;   
+  margin-bottom: 4px;   
+  text-align: center;
+}
+
+.subtitulo-formulario {
+  color: #555;
+  margin-bottom: 10px;   
+  text-align: center;
+  font-size: 0.8rem;   
+}
+
+.formulario-consulta input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;   
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;   
+  color: #333;
+  font-size: 0.85rem; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);   
+  margin: 5px 0;   
+}
+
+.boton-consultar {
+  background: linear-gradient(to right, #b12e9b, #922626);
+  color: #fff;
+  border-radius: 6px;   
+  border: none;
+  padding: 8px 12px;   
+  cursor: pointer;
+  margin-top: 6px;   
+  font-size: 0.85rem;   
+  font-weight: 600;
+  width: 100%;
+}
+
+.boton-volver {
+  background: linear-gradient(to right, #b12e9b, #922626);
+  color: #fff;
+  border-radius: 6px;   
+  border: none;
+  padding: 8px 12px;   
+  cursor: pointer;
+  font-size: 0.85rem;   
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-top: 8px;   
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);   
+  width: 100%; 
+  justify-content: center; 
+}
+
+.boton-volver:hover {
+  transform: translateY(-2px);   
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);   
+  background: linear-gradient(to right, #922626, #b12e9b);
+}
+
+.boton-volver i {
+  margin-right: 6px;   
+  font-size: 0.9rem;   
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.header-section hr {
+  border: 1px solid #1a2a6c;
+  margin: 8px 0;
+}
+
+.header-section h2 {
+  color: #1a2a6c;
+  font-size: 1.2rem;
+}
+
+.subtitulo-lista {
+  color: #1a2a6c;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.lista-simple {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.lista-simple .evento-lista {
+  background-color: #fff;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 3px solid #b12e9b;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.lista-simple .evento-lista:last-child {
+  margin-bottom: 0;
+}
+
+.form-simple {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.form-simple label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-simple input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 5px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 0.85rem;
+}
+
+.form-simple input[type="submit"] {
+  background: linear-gradient(to right, #b12e9b, #922626);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+@media screen and (max-width: 480px) {
+  .contenedor-principal {
+    padding: 8px;   
+  }
+  
+  .titulo-pagina {
+    font-size: 1.1rem;   
+  }
+  
+  .evento-item {
+    padding: 8px;   
+  }
+  
+  .formulario-consulta {
+    padding: 10px;   
+  }
+  
+  body {
+    padding: 5px;   
+    align-items: flex-start;   
+  }
+  
+  .header-section h2 {
+    font-size: 1rem;
+  }
+  
+  .lista-simple .evento-lista {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+}
+
+
+/*Creditos style.css = https://github.com/DaniCodex/modificaciones.previas.validacionformulario
+https://www.youtube.com/watch?v=nLvg_sqNYB0

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MoBaTickets - Consulta de Ticket</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style/style_consultar_ticket.css">
+</head>
+<body>
+    <div class="contenedor-consultar">
+        <div class="seccion-formulario">
+            <div class="contenido-formulario">
+                <h2 class="titulo-consultar">Consulta de Ticket</h2>
+                <!--Primer tipo de consulta de tickets, consulta por sector -->
+                <p class="subtitulo-consultar">Seleccione el tipo de ticket para consultar por sector:</p>
+                <form id="consultar_ticket" action="php/consultar_ticket.php" method="post">
+                    <div class="grupo-input">
+                        <label>
+                            <i class='bx bx-category'></i>
+                            <select name="sector">
+                                <option value="">Seleccione una opción</option>
+                                <option value="diamante">Diamante</option>
+                                <option value="diamante lateral">Diamante Lateral</option>
+                                <option value="platinum">Platinum</option>
+                                <option value="golden">Golden</option>
+                                <option value="platea zafiro">Platea Zafiro</option>
+                                <option value="platea royal">Platea Royal</option>
+                                <option value="platea baja silver">Platea Baja Silver</option>
+                                <option value="silver escenario B">Silver Escenario B</option>
+                                <option value="platea alta">Platea Alta</option>
+                                <option value="tribuna">Tribuna</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit" class="boton-consultar">Consultar por sector</button>
+                </form>
+                
+                <div class="separador"></div>
+                <!-- Segundo tipo de consulta de tickets, consulta por número de orden -->
+                <p class="subtitulo-consultar">Ingrese el número de orden para consultar:</p>
+                <form id="consultar_id_ticket" action="php/consultar_id_ticket.php" method="post">
+                    <div class="grupo-input">
+                        <label>
+                            <i class='bx bx-barcode'></i>
+                            <input type="text" name="nro_orden" placeholder="Número de orden">
+                        </label>
+                    </div>
+                    <button type="submit" class="boton-consultar">Consultar por número</button>
+                </form>
+                <div class="separador"></div>
+                <!-- Tercer tipo de consulta de tickets, consulta por descuento-->
+                <p class="subtitulo-consultar">Seleccione el tipo de descuento a consultar:</p>
+                <form action="php/consulta_descuento.php" method="post">
+                    <div class="grupo-input">
+                        <label>
+                            <i class='bx bx-category'></i>
+                            <select name="descuento" id="descuento" required>
+                                <option value=""> Seleccione un tipo de descuento</option>
+                                <option value="Banco">Banco (25%)</option>
+                                <option value="Cupón">Cupón (40%)</option>
+                                <option value="Tarjeta">Tarjeta (60%)</option>
+                                <option value="Canje">Canje (100%)</option>
+                                <option value="Sin descuento">Sin descuento </option>
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit" class="boton-consultar">Consultar por descuento</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

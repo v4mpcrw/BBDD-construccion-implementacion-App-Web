@@ -1,0 +1,218 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e98074, #b21f1f, #7ea9e9);
+    padding: 20px;
+}
+
+.seccion-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+}
+
+.contenido-formulario {
+    width: 100%;
+    max-width: 900px;
+}
+
+.titulo-formulario {
+    color: #1a2a6c;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitulo-formulario {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.formulario-ticket {
+    margin: 20px 0;
+}
+
+.fila-formulario {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.grupo-input {
+    flex: 1;
+}
+
+.ancho-completo {
+    width: 100%;
+}
+
+.formulario-ticket label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    padding: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+.formulario-ticket label input,
+.formulario-ticket label select {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.formulario-ticket label i {
+    color: #1a2a6c;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 10px;
+    color: #1a2a6c;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.titulo-seccion i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.campos-tipo {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #1a2a6c;
+}
+
+.funcion {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #1a2a6c;
+}
+
+#funcionesContainer {
+    margin: 20px 0;
+}
+
+.boton-agregar {
+    background: linear-gradient(to right, #f687c4, #f3b365);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    margin: 15px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.boton-agregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.boton-registrar {
+    background: linear-gradient(to right, #5aa5dc, #d560d7);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.boton-registrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+    .seccion-formulario {
+        padding: 30px 20px;
+    }
+    
+    .fila-formulario {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .titulo-formulario {
+        font-size: 2rem;
+    }
+    
+    .formulario-ticket input[type="number"],
+    .formulario-ticket input[type="text"],
+    .formulario-ticket select {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .seccion-formulario {
+        padding: 25px 15px;
+    }
+    
+    .titulo-formulario {
+        font-size: 1.8rem;
+    }
+    
+    .boton-registrar, .boton-agregar {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .formulario-ticket input[type="number"],
+    .formulario-ticket input[type="text"],
+    .formulario-ticket select {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+/*Creditos style.css = https://github.com/DaniCodex/modificaciones.previas.validacionformulario
+https://www.youtube.com/watch?v=nLvg_sqNYB0
